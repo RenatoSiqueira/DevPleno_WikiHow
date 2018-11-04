@@ -1,0 +1,11 @@
+<%- include('../header') %>
+
+    <form action="/categorias/editar/<%= categoria.id %>" method="post">
+    <div class="form-group">
+        <label for="categoria">Nome Categoria</label>
+        <input name="categoria" class="form-control" placeholder="Nome Categoria" value="<%= categoria.categoria %>">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+    </form>
+
+<%- include('../footer') %>

@@ -6,6 +6,7 @@
 - Servidor Node + Express + Ejs + Axios
 - Router/Controllers
 - Banco Firebase
+- Bootstrap v4
 
 ### Realizado em:
 ```
