@@ -3,7 +3,8 @@
 ### Evento Gratuito de Formação de Novos Desenvolvedores FullStack, que inicia pelo funcionamento/conceitos básicos até uma aplicação funcional acessível via web.
 
 ### Projeto: WikiHow
-- Servidor Node + Express + Ejs
+- Servidor Node + Express + Ejs + Axios
+- Router/Controllers
 - Banco Firebase
 
 ### Realizado em:
