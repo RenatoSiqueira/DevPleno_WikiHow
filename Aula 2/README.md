@@ -5,4 +5,9 @@
 - Request/Response
 - NPM
 - Express
-- 
+- EJS
+- Firebase
+- Axios
+- API
+- Refatoração
+- Rotas
