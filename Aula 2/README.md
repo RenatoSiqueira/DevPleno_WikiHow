@@ -10,4 +10,6 @@
 - Axios
 - API
 - Refatoração
-- Rotas
+- Router
+- Controller
+- Refatoração
