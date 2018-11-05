@@ -8,11 +8,10 @@ const publicacoes = require('./routes/publicacoes')
 const port = process.env.port || 3000
 
 app.set('view engine', 'ejs')
+app.use(bodyParser.urlencoded())
 
 app.use('/categorias', categorias)
 app.use('/publicacoes', publicacoes)
-
-app.use(bodyParser.urlencoded())
 
 app.get('/', async (request, response) => {
     response.render('index')

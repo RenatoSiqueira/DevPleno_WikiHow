@@ -10,10 +10,10 @@
     <tbody>
         <% publicacoes.forEach( publicacao => { %>
             <tr>
-            <td><%= publicacao.categoria %></td>
+            <td><%= publicacao.titulo %></td>
             <td>
-                <a href="/publicacoes/excluir/<%= publicacao.id %>">Excluir</a>
-                <a href="/pblicacoes/editar/<%= publicacao.id %>">Editar</a>
+                <a href="/publicacoes//excluir/<%= categoria %>/<%= publicacao.id %>">Excluir</a>
+                <a href="/publicacoes/editar/<%= categoria %>/<%= publicacao.id %>">Editar</a>
             </td>
             </tr>
         <% }) %>

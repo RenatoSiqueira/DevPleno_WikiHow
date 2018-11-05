@@ -6,17 +6,17 @@ const novaForm = async (req, res) => {
 }
 
 const nova = async (req, res) => {
-    console.log('oii', req.body)
     await api.create('publicacoes/' + req.body.categoria, { 
         titulo: req.body.titulo,
-        publicacao: req.body.conteudo
+        conteudo: req.body.conteudo
     })
     res.redirect('/publicacoes')
 }
 
 const list = async (req, res) => {
-    const publicacoes = await api.list('publicacoes')
-    res.render('publicacoes/index', { publicacoes })
+    const categoria = req.params.categoria
+    const publicacoes = await api.list('publicacoes/'+ categoria)
+    res.render('publicacoes/index', { publicacoes, categoria })
 }
 
 const editarForm = async (req, res) => {
