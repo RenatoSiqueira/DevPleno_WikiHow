@@ -14,12 +14,6 @@ const nova = async (req, res) => {
 }
 
 const list = async (req, res) => {
-    const publicacoes = await api.list('publicacoes/')
-    const categoria = publicacoes[0].id
-    res.render('publicacoes/index', { publicacoes, categoria })
-}
-
-const listCategoria = async (req, res) => {
     const categoria = req.params.categoria
     const publicacoes = await api.list('publicacoes/'+ categoria)
     res.render('publicacoes/index', { publicacoes, categoria })
@@ -50,5 +44,5 @@ const excluir = async (req, res) => {
 }
 
 module.exports = {
-    novaForm, nova, list, listCategoria, editarForm, editar, excluir
+    novaForm, nova, list, editarForm, editar, excluir
 }
