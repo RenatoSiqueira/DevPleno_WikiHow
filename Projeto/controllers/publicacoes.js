@@ -16,13 +16,14 @@ const nova = async (req, res) => {
 const list = async (req, res) => {
     const categoria = req.params.categoria
     const publicacoes = await api.list('publicacoes/'+ categoria)
+    console.log(publicacoes)
     res.render('publicacoes/index', { publicacoes, categoria })
 }
 
 const editarForm = async (req, res) => {
-    const categoria = await api.get('categorias', req.params.id)
-    res.render('categorias/editar', {
-        categoria
+    const publicacao = await api.get('publicacoes/' + req.params.categoria, req.params.id)
+    res.render('publicacoes/editar', {
+        publicacao
     })
 }
 
