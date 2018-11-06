@@ -10,35 +10,45 @@ const nova = async (req, res) => {
         titulo: req.body.titulo,
         conteudo: req.body.conteudo
     })
-    res.redirect('/publicacoes')
+    res.redirect('/publicacoes/categoria/' + req.body.categoria)
 }
 
 const list = async (req, res) => {
+    const publicacoes = await api.list('publicacoes/')
+    const categoria = publicacoes[0].id
+    res.render('publicacoes/index', { publicacoes, categoria })
+}
+
+const listCategoria = async (req, res) => {
     const categoria = req.params.categoria
     const publicacoes = await api.list('publicacoes/'+ categoria)
-    console.log(publicacoes)
     res.render('publicacoes/index', { publicacoes, categoria })
 }
 
 const editarForm = async (req, res) => {
-    const publicacao = await api.get('publicacoes/' + req.params.categoria, req.params.id)
+    const categoria = req.params.categoria
+    const publicacao = await api.get('publicacoes/' + categoria, req.params.id)
     res.render('publicacoes/editar', {
-        publicacao
+        publicacao,
+        categoria
     })
 }
 
 const editar = async (req, res) => {
-    await api.update('categorias', req.params.id, { 
-        categoria: req.body.categoria 
+    const categoria = req.params.categoria
+    await api.update('publicacoes/'+ categoria, req.params.id, { 
+        titulo: req.body.titulo,
+        conteudo: req.body.conteudo
     })
-    res.redirect('/categorias')
+    res.redirect('/publicacoes/categoria/' + categoria)
 }
 
 const excluir = async (req, res) => {
-    await api.apagar('publicacoes', req.param.id)
-    res.redirect('/publicacoes')
+    const categoria = req.params.categoria
+    await api.apagar('publicacoes/' + categoria, req.params.id)
+    res.redirect('/publicacoes/categoria/' + req.params.categoria)
 }
 
 module.exports = {
-    novaForm, nova, list, editarForm, editar, excluir
+    novaForm, nova, list, listCategoria, editarForm, editar, excluir
 }

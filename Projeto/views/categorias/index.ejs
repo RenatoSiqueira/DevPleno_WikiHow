@@ -10,7 +10,11 @@
     <tbody>
         <% categorias.forEach( categoria => { %>
             <tr>
-            <td><%= categoria.categoria %></td>
+            <td>
+                <a href="/publicacoes/categoria/<%= categoria.id %>">
+                    <%= categoria.categoria %>
+                </a>
+            </td>
             <td>
                 <a href="/categorias/excluir/<%= categoria.id %>">Excluir</a>
                 <a href="/categorias/editar/<%= categoria.id %>">Editar</a>
@@ -21,4 +25,5 @@
     </table>
 
     <a href="/categorias/nova" class="btn btn-light">Nova Categoria</a>
+    <a href="/publicacoes/nova" class="btn btn-light">Nova Publicacao</a>
 <%- include('../footer') %>

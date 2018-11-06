@@ -12,7 +12,7 @@
             <tr>
             <td><%= publicacao.titulo %></td>
             <td>
-                <a href="/publicacoes//excluir/<%= categoria %>/<%= publicacao.id %>">Excluir</a>
+                <a href="/publicacoes/excluir/<%= categoria %>/<%= publicacao.id %>">Excluir</a>
                 <a href="/publicacoes/editar/<%= categoria %>/<%= publicacao.id %>">Editar</a>
             </td>
             </tr>
@@ -21,4 +21,5 @@
     </table>
 
     <a href="/publicacoes/nova" class="btn btn-light">Nova Publicacao</a>
+    
 <%- include('../footer') %>

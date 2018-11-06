@@ -3,8 +3,7 @@ const router = express.Router()
 
 const controller = require('../controllers/publicacoes')
 
-router.get('/', controller.list)
-router.get('/categoria/:categoria', controller.list)
+router.get('/categoria/:categoria', controller.listCategoria)
 router.get('/nova', controller.novaForm)
 router.post('/nova', controller.nova)
 router.get('/editar/:categoria/:id', controller.editarForm)

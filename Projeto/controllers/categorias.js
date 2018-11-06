@@ -29,8 +29,8 @@ const editar = async (req, res) => {
 }
 
 const excluir = async (req, res) => {
-    await api.apagar('categorias', req.param.id)
-    //res.send(`Item ${req.params.id}: Excluido`)
+    await api.apagar('categorias', req.params.id)
+    await api.apagar('publicacoes', req.params.id)
     res.redirect('/categorias')
 }
 
