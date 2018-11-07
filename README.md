@@ -1,4 +1,5 @@
 # DevPleno FullStackLab
+![progress](http://progressed.io/bar/100?title=completed "progress")
 
 ### Evento Gratuito de Formação de Novos Desenvolvedores FullStack, que inicia pelo funcionamento/conceitos básicos até uma aplicação funcional acessível via web.
 
